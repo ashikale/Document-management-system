@@ -140,8 +140,8 @@ public class DocumentServiceImpl implements DocumentService {
 	}
     
     //FallBack Method for CB pattern
-    private ApiException fallbackMethod(Exception e) {
-        return ApiException.builder().statusCode(SERVICE_NAME).message("Comment service is not responding properly").build();
+    private PDFFile fallbackMethod(long id, Comments comments,Exception e) {
+        return PDFFile.builder().postBody("Fallback method is called, 3rd party api currently not responding").build();
     }
 	
 
